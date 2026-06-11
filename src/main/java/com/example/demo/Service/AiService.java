@@ -33,8 +33,8 @@ public class AiService {
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.setBearerAuth(openaiApiKey);
 
-        headers.add("HTTP-Referer", "http://localhost:8089"); 
-        headers.add("X-Title", "DemoApp");
+        headers.add("HTTP-Referer", "https://prashu-ai-1.onrender.com");
+        headers.add("X-Title", "Prashu-AI");
 
         HttpEntity<OpenAIRequest> entity = new HttpEntity<>(request, headers);
 
