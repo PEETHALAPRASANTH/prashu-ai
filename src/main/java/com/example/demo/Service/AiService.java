@@ -26,7 +26,7 @@ public class AiService {
         message.setContent(userMessage);
 
         OpenAIRequest request = new OpenAIRequest();
-        request.setModel("openai/gpt-3.5-turbo"); 
+        request.setModel("openai/gpt-4o-mini"); 
         request.setMessages(List.of(message));
 
         HttpHeaders headers = new HttpHeaders();
