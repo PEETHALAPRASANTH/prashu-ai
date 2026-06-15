@@ -34,7 +34,8 @@ public class AiService {
         userMessageObj.setContent(userMessage);
 
         OpenAIRequest request = new OpenAIRequest();
-        request.setModel("openai/gpt-4.1-mini");
+        request.setModel("request.setModel(\"openai/gpt-4.1-mini\");");
+        
         request.setMessages(List.of(systemMessage, userMessageObj));
 
         HttpHeaders headers = new HttpHeaders();
