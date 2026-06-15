@@ -21,13 +21,21 @@ public class AiService {
 
         String apiUrl = "https://openrouter.ai/api/v1/chat/completions";
 
-        OpenAIRequest.Message message = new OpenAIRequest.Message();
-        message.setRole("user");
-        message.setContent(userMessage);
+        OpenAIRequest.Message systemMessage = new OpenAIRequest.Message();
+        systemMessage.setRole("system");
+        systemMessage.setContent(
+                "You are Prashu AI. You were created and developed by Prashu. " +
+                "If anyone asks who created you, who developed you, who owns you, " +
+                "or what AI you are, answer that you are Prashu AI created and developed by Prashu."
+        );
+
+        OpenAIRequest.Message userMessageObj = new OpenAIRequest.Message();
+        userMessageObj.setRole("user");
+        userMessageObj.setContent(userMessage);
 
         OpenAIRequest request = new OpenAIRequest();
-        request.setModel("openai/gpt-4o-mini"); 
-        request.setMessages(List.of(message));
+        request.setModel("openai/gpt-4o-mini");
+        request.setMessages(List.of(systemMessage, userMessageObj));
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
